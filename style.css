@@ -81,7 +81,7 @@ header label{
     display: flex;
     align-items: center;
     justify-content: center;
-    background:#fff ;
+    background:#d7dded;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -90,6 +90,10 @@ header label{
     width: 40vw;
     animation: float 3s linear infinite; 
 }
+
+
+
+
 @keyframes float{
     0%,100%{
         transform: translateY(0rem);
@@ -107,6 +111,12 @@ header label{
 .home .content h3 span{
     color: #cc5f71;
     text-transform: uppercase;
+}
+.home .content p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+
 }
 
 
@@ -138,6 +148,13 @@ header label{
     }
     
 }
+@media (max-width:991px){
+    section{
+        padding: 0 3%;
+        padding-top: 7.5rem;
+    }
+    
+}
 
 @media (max-width:768px){
     header label{
@@ -156,6 +173,8 @@ header label{
         transform-origin: top;
         transform: scaleY(0);
         opacity: 0;
+        transition: .2s linear;
+
     }
     header .navbar a{
         display: block;
@@ -165,10 +184,23 @@ header label{
     header input:checked ~ .navbar{
         transform: scaleY(1);
         opacity: 1;
+        transition: .3s linear;
 
     }
     header input:checked ~ label::before{
-        content: '\'
+        content: '\f00d'
+    }
+    .home{
+        flex-flow: column-reverse;
+    }
+    .home .image img{
+        width: 100%;
+    }
+    .home .content h3{
+        font-size: 3.6rem;
+    }
+    .home .content p{
+        font-size: 1.5rem;
     }
 }
 
